@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 
 @SpringBootApplication
@@ -29,5 +30,25 @@ public class Hospital implements CommandLineRunner {
         PatientRepository.save(new Patient(null,"Dzah",dateFormat.parse("11/12/2005"),true,75));
         PatientRepository.save(new Patient(null,"Tseh",dateFormat.parse("17/07/2008"),true,75));
 
+
+        // la methode findon  pour consulter tous les client
+        List<Patient> patients =PatientRepository.findAll();
+        patients.forEach(p->{System.out.println(p.toString());
+        });
     }
+
+
+/*
+
+4. Configurer l'unité de persistance dans le ficher application.properties
+5. Créer l'interface JPA Repository basée sur Spring data
+6. Tester quelques opérations de gestion de patients :
+    - Ajouter des patients
+    - Consulter tous les patients
+    - Consulter un patient
+    - Chercher des patients
+    - Mettre à jour un patient
+    - supprimer un patient
+7. Migrer de H2 Database vers MySQL
+8. Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation, users et roles de la vidéo : */
 }
