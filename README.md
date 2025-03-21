@@ -31,4 +31,6 @@ De la meme facon, nous utilisons le meme objet pour  consulter tous les patient 
  nous avons aussi la consultation de patient par id
 ![test](captureDEcran/test51.png)
 
+ Nous executons l'option recherche  par nom :
+ ![test](captureDEcran/test61.png)
 

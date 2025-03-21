@@ -2,6 +2,7 @@ package ma.enset.Hospital;
 
 import ma.enset.Hospital.Repository.patientRepository;
 import ma.enset.Hospital.entities.Patient;
+import org.hibernate.mapping.Array;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -50,7 +52,15 @@ public class Hospital implements CommandLineRunner {
         System.out.println(patient.getScore());
         System.out.println("**************************************");
 
+   //       la methode pour charger   pour chercher un patientt
 
+        // on va juste chercher deux patient a  la fois
+        List<String> personne  = Arrays.asList("Tseh","ako");
+        List<Patient>  patients1 =PatientRepository.findBynomIn(personne);
+         System.out.println("************************");
+        patients1.forEach(p->{System.out.println(p.toString());
+        });
+        System.out.println("************************");
 
 
     }
