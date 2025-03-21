@@ -28,4 +28,7 @@ nou avons les resultats suivant :
 De la meme facon, nous utilisons le meme objet pour  consulter tous les patient en utilisant 
  la methode findAll:
 ![test](captureDEcran/test41.png)
+ nous avons aussi la consultation de patient par id
+![test](captureDEcran/test51.png)
+
 

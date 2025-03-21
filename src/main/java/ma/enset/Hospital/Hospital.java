@@ -35,6 +35,24 @@ public class Hospital implements CommandLineRunner {
         List<Patient> patients =PatientRepository.findAll();
         patients.forEach(p->{System.out.println(p.toString());
         });
+
+        // la methode find by id
+
+        Patient patient =PatientRepository.findById(Long.valueOf(1)).get();
+        System.out.println("**************************************");
+        System.out.println(patient.getId());
+        System.out.println(patient.getNom());
+        System.out.println(patient.getDateNaissance());
+        System.out.println(patient.isMalade()
+
+
+        );
+        System.out.println(patient.getScore());
+        System.out.println("**************************************");
+
+
+
+
     }
 
 
