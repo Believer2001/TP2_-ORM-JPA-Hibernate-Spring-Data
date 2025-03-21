@@ -18,4 +18,10 @@ nous pouvons voir la base de donnees h2 qui a ete cree saisissant dans le naviga
 ![creaio projet ](captureDEcran/test13.png)
 
 
+Nous passons a present a la creation de l'interface JPA Repository basée sur Spring data. Apres cette creation , nous pouvons maaintenant  implemnter la 
+l'interface Commandline run pour redefinir la methode run qui va nous permettre de faire des ajout.
+nous definissions de type patientrepository,nous faisons l'injection grace a l'annotation autowired et nous utiisons cet objet pour faire  des savec dans la metode run que nous redefinisson
+nou avons les resultats suivant :
+![creaio projet ](captureDEcran/test32.png)
+![creaio projet ](captureDEcran/test31.png)
 
