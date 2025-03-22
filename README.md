@@ -35,8 +35,15 @@ De la meme facon, nous utilisons le meme objet pour  consulter tous les patient 
  ![test](captureDEcran/test61.png)
 
 Nous faison la mise a jour du premier patient , nous 
-allons changer le nom " tseh" "Kokou mise a jour "
-![test](captureDEcran/test71.png)
+allons changer le nom " tseh" "KokcaptureDEcran/test71.png)
 ![test](captureDEcran/test72.png)
+
+
+Nous allons supprimer la ligne que nous venons de mettre a jour
+![test](captureDEcran/test81.png)
+![test](captureDEcran/test82.png)
+
+
+
 
 

@@ -73,7 +73,9 @@ public class Hospital implements CommandLineRunner {
 
         PatientRepository.save(patientMSJ);
 
-
+      // la suppresion de patient
+        Patient Asupprimer =PatientRepository.findById(Long.valueOf(1)).get();
+        PatientRepository.delete(Asupprimer);
     }
 
 
