@@ -34,3 +34,9 @@ De la meme facon, nous utilisons le meme objet pour  consulter tous les patient 
  Nous executons l'option recherche  par nom :
  ![test](captureDEcran/test61.png)
 
+Nous faison la mise a jour du premier patient , nous 
+allons changer le nom " tseh" "Kokou mise a jour "
+![test](captureDEcran/test71.png)
+![test](captureDEcran/test72.png)
+
+

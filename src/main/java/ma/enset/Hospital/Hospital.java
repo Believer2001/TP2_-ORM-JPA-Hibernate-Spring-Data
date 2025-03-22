@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Repository;
 
 
 import java.text.SimpleDateFormat;
@@ -61,6 +62,16 @@ public class Hospital implements CommandLineRunner {
         patients1.forEach(p->{System.out.println(p.toString());
         });
         System.out.println("************************");
+
+
+        // la mise a jour des  patiennt
+
+        // poiur celal nous allons faire la recheche par id , modifions l'id et faisons la mise a jour
+        Patient patientMSJ =PatientRepository.findById(Long.valueOf(1)).get();
+
+        patientMSJ.setNom("Kokou mise a jour");
+
+        PatientRepository.save(patientMSJ);
 
 
     }
