@@ -18,7 +18,7 @@ nous pouvons voir la base de donnees h2 qui a ete cree saisissant dans le naviga
 ![creaio projet ](captureDEcran/test13.png)
 
 
-Nous passons a present a la creation de l'interface JPA Repository basée sur Spring data. Apres cette creation , nous pouvons maaintenant  implemnter la 
+Nous passons a present a la creation de l'intjerface JPA Repository basée sur Spring data. Apres cette creation , nous pouvons maaintenant  implemnter la 
 l'interface Commandline run pour redefinir la methode run qui va nous permettre de faire des ajout.
 nous definissions de type patientrepository,nous faisons l'injection grace a l'annotation autowired et nous utiisons cet objet pour faire  des savec dans la metode run que nous redefinisson
 nou avons les resultats suivant :
@@ -43,7 +43,16 @@ Nous allons supprimer la ligne que nous venons de mettre a jour
 ![test](captureDEcran/test81.png)
 ![test](captureDEcran/test82.png)
 
+### Migrer de H2 Database vers MySQL
+ Pour effectuer cela , nous devons  installer la base de donnee MySQL en local. Dans le cadre de ce TP ,
+j'ai installer MySQL  via un conteneur docker . J'ai aussi installer phpmyadmin pour avoir jne intarface administrateur 
+via le naviagateur. les differences configurations des conteneurs se trouvent dans le fichier [fichier docker compose ](docker-compose.yml)
+L'executions de la commande ```docker-compose up -d``` permet de  creer les conteneurs. on ajoute ensuite les dependences du driver MySQL dans 
+le fichier pom.xml et on modifie  le fichier ```application.properties``` pour se connecter a la base de donnee de MySQL : 
+  l'Execution donne le code  le resultat suivant: 
 
+![test](captureDEcran/test91.png)
+![test](captureDEcran/test92.png)
 
 
 
