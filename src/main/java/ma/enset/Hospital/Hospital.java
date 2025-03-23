@@ -5,6 +5,7 @@ import ma.enset.Hospital.Repository.MedecinRepository;
 import ma.enset.Hospital.Repository.PatientRepository;
 import ma.enset.Hospital.Repository.RendezVousRepository;
 import ma.enset.Hospital.entities.*;
+import ma.enset.Hospital.service.HospitalServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -93,11 +94,10 @@ public class Hospital{
 // on va creer une methode qui retoure un objet de type commande ligne Runner
 
 @Bean
-CommandLineRunner start(
-        PatientRepository patientRepository,
-        MedecinRepository medecinRepository,
-        RendezVousRepository rendezVousRepository,
-        ConsultationRepository consultationRepository) {
+CommandLineRunner start(HospitalServiceImpl hospitalService,
+                        PatientRepository patientRepository,
+                        MedecinRepository medecinRepository,
+                        RendezVousRepository rendezVousRepository) {
     return args -> {
         // insertion de patient
         Stream.of("Hasan","Mohammed","Idriss")
@@ -107,7 +107,7 @@ CommandLineRunner start(
                     patient.setNom(name);
                     patient.setDateNaissance(new Date());
                     patient.setMalade(false);
-                    patientRepository.save(patient);
+                    hospitalService.savePatient(patient);
                 });
 
   // insertion de medecin
@@ -118,7 +118,7 @@ CommandLineRunner start(
                    medecin.setNom(name);
                    medecin.setEmail(name+"@gmail.com");
                    medecin.setSpecialite(Math.random()>0.5?"Cardio":"Dentiste");
-                   medecinRepository.save(medecin);
+                   hospitalService.saveMedecin(medecin);
 
                 });
 
@@ -150,7 +150,7 @@ CommandLineRunner start(
         consultation.setDateConsultation(new Date());
         consultation.setRendezVous(rendezVous1);
         consultation.setRapport("Rapport de la consultaiton ......");
-        consultationRepository.save(consultation);
+        hospitalService.saveConsultation(consultation);
 
     };
 }
