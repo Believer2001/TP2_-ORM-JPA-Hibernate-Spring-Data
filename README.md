@@ -55,4 +55,17 @@ le fichier pom.xml et on modifie  le fichier ```application.properties``` pour s
 ![test](captureDEcran/test92.png)
 
 
+##   Mapping des autres objets de du sytemes en suivants l'exemple precedente :
+
+La conception du systeme est la suivante : 
+![conception](./captureDEcran/conception.png)
+ 
+
+Apres la creations des entites et les mapping, nnous pouvons constater que les base  de donnees on ete cree dans h2: 
+
+![Mapping du syteme](./captureDEcran/test10.png)
+
+
+
+
 

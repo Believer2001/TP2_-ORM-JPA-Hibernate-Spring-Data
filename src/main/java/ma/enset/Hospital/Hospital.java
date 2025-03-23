@@ -27,6 +27,7 @@ public class Hospital implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        /*
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         PatientRepository.save(new Patient(null,"Tseh",dateFormat.parse("11/07/2001"),true,75));
         PatientRepository.save(new Patient(null,"ako",dateFormat.parse("21/09/2008"),true,75));
@@ -63,7 +64,6 @@ public class Hospital implements CommandLineRunner {
         });
         System.out.println("************************");
 
-
         // la mise a jour des  patiennt
 
         // poiur celal nous allons faire la recheche par id , modifions l'id et faisons la mise a jour
@@ -76,6 +76,9 @@ public class Hospital implements CommandLineRunner {
       // la suppresion de patient
         Patient Asupprimer =PatientRepository.findById(Long.valueOf(1)).get();
         PatientRepository.delete(Asupprimer);
+
+
+         */
     }
 
 
@@ -92,4 +95,7 @@ public class Hospital implements CommandLineRunner {
     - supprimer un patient
 7. Migrer de H2 Database vers MySQL
 8. Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation, users et roles de la vidéo : */
+
+
+
 }
