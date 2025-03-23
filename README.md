@@ -83,6 +83,13 @@ Test insertion  Rendezvous
 ![Rconstultation](./captureDEcran/test142.png)  
 
 
+On  ajoute en suite une couche web pour cree des controller web  pour  voir la liste dans le navigateur 
+ et on a  le resultat suivant ```localhost:8085/patients```
+:
+![web](./captureDEcran/testweb.png)
+ cette affichage du au relation bidirectionnelle et au fait que nous avons fait les mapping pour la  serialisation JSON
+Nous corrieons cela et nous obtenons:
+![liste des patient dans web](./captureDEcran/testwebCori.png)
 
 
 

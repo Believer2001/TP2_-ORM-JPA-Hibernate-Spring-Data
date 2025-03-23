@@ -155,19 +155,6 @@ CommandLineRunner start(HospitalServiceImpl hospitalService,
     };
 }
 
-/*
-
-4. Configurer l'unité de persistance dans le ficher application.properties
-5. Créer l'interface JPA Repository basée sur Spring data
-6. Tester quelques opérations de gestion de patients :
-    - Ajouter des patients
-    - Consulter tous les patients
-    - Consulter un patient
-    - Chercher des patients
-    - Mettre à jour un patient
-    - supprimer un patient
-7. Migrer de H2 Database vers MySQL
-8. Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation, users et roles de la vidéo : */
 
 
 
