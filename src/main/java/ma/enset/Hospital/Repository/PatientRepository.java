@@ -8,8 +8,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public interface patientRepository  extends JpaRepository<Patient,Long> {
+public interface PatientRepository extends JpaRepository<Patient,Long> {
 
     List<Patient> findBynomIn(Collection<String> noms);
-
+      Patient findByNom(String names);
 }

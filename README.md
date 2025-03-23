@@ -55,7 +55,7 @@ le fichier pom.xml et on modifie  le fichier ```application.properties``` pour s
 ![test](captureDEcran/test92.png)
 
 
-##   Mapping des autres objets de du sytemes en suivants l'exemple precedente :
+##   Mapping des autres objets du syteme en suivants l'exemple precedente :
 
 La conception du systeme est la suivante : 
 ![conception](./captureDEcran/conception.png)
@@ -64,6 +64,24 @@ La conception du systeme est la suivante :
 Apres la creations des entites et les mapping, nnous pouvons constater que les base  de donnees on ete cree dans h2: 
 
 ![Mapping du syteme](./captureDEcran/test10.png)
+
+Test insertion Patient :
+![pateint inversion](./captureDEcran/test111.png)
+![pateint inversion](./captureDEcran/test112.png)
+
+Test insertion Medecin 
+![medecin](./captureDEcran/test121.png)  
+![medecin](./captureDEcran/test122.png)  
+
+Test insertion  Rendezvous
+![RendezVous](./captureDEcran/test131.png)  
+![RendezVous](./captureDEcran/test132.png)  
+
+Test creation de consultaiton
+Test insertion  Rendezvous
+![conslation](./captureDEcran/test141.png)  
+![Rconstultation](./captureDEcran/test142.png)  
+
 
 
 

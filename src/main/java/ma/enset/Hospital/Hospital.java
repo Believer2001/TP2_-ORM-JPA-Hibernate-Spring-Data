@@ -1,30 +1,31 @@
 package ma.enset.Hospital;
 
-import ma.enset.Hospital.Repository.patientRepository;
-import ma.enset.Hospital.entities.Patient;
-import org.hibernate.mapping.Array;
-import org.springframework.beans.factory.annotation.Autowired;
+import ma.enset.Hospital.Repository.ConsultationRepository;
+import ma.enset.Hospital.Repository.MedecinRepository;
+import ma.enset.Hospital.Repository.PatientRepository;
+import ma.enset.Hospital.Repository.RendezVousRepository;
+import ma.enset.Hospital.entities.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Bean;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.List;
+import javax.xml.crypto.Data;
+import java.util.Date;
+import java.util.stream.Stream;
 
 
 @SpringBootApplication
-public class Hospital implements CommandLineRunner {
+public class Hospital{
 
-    @Autowired
-    private patientRepository PatientRepository;
+   // @Autowired
+   // private patientRepository PatientRepository;
     public static void main(String[] args) {
         SpringApplication.run(Hospital.class, args);
     }
 
 
+     /*
     @Override
     public void run(String... args) throws Exception {
         /*
@@ -78,9 +79,81 @@ public class Hospital implements CommandLineRunner {
         PatientRepository.delete(Asupprimer);
 
 
-         */
-    }
 
+
+
+    }
+         */
+
+
+
+// on va faire le text des  nouvelle entite que nous venons de definir:
+
+// on va utiliser l'onbejt commandeLinerunner pour eviter d'implementer commande ling runner
+// on va creer une methode qui retoure un objet de type commande ligne Runner
+
+@Bean
+CommandLineRunner start(
+        PatientRepository patientRepository,
+        MedecinRepository medecinRepository,
+        RendezVousRepository rendezVousRepository,
+        ConsultationRepository consultationRepository) {
+    return args -> {
+        // insertion de patient
+        Stream.of("Hasan","Mohammed","Idriss")
+                .forEach(name -> {
+
+                    Patient patient =new Patient();
+                    patient.setNom(name);
+                    patient.setDateNaissance(new Date());
+                    patient.setMalade(false);
+                    patientRepository.save(patient);
+                });
+
+  // insertion de medecin
+        Stream.of("Alfa","yasmine","Benoit","Donald")
+                .forEach(name -> {
+
+                    Medecin medecin =new Medecin();
+                   medecin.setNom(name);
+                   medecin.setEmail(name+"@gmail.com");
+                   medecin.setSpecialite(Math.random()>0.5?"Cardio":"Dentiste");
+                   medecinRepository.save(medecin);
+
+                });
+
+        // recherche de patient
+        Patient patient = patientRepository.findById(1L).orElse(null);
+        Patient patient1 =patientRepository.findByNom("Mohammed");
+
+        //recherche de medecin
+
+        Medecin medecin =medecinRepository.findMedecinByNom("yasmine");
+
+
+        // creation de rendezVous
+
+        RendezVous rendezVous =new RendezVous();
+        rendezVous.setDate(new Date());
+        rendezVous.setStatus(StatusRDV.PENDING);
+        rendezVous.setMedecin(medecin);
+        rendezVous.setPatient(patient);
+
+        rendezVousRepository.save(rendezVous);
+
+
+        // creationde consultation
+
+         RendezVous rendezVous1=rendezVousRepository.findById(1L).orElse(null);
+
+        Consultation consultation =new Consultation();
+        consultation.setDateConsultation(new Date());
+        consultation.setRendezVous(rendezVous1);
+        consultation.setRapport("Rapport de la consultaiton ......");
+        consultationRepository.save(consultation);
+
+    };
+}
 
 /*
 
